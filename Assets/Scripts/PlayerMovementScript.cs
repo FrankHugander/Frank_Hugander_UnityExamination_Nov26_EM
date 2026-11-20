@@ -1,4 +1,5 @@
 using System;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,7 +10,7 @@ public class PlayerMovementScript : MonoBehaviour
     private Vector2 movementInput;
     private Vector2 actualVelocity;
     
-    [SerializeField] private float movementSpeed = 10;
+    [SerializeField] private float movementSpeed;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,21 +22,22 @@ public class PlayerMovementScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         movementInput = Vector2.zero;
-        movementSpeed = 10;
+        movementSpeed = 130.0f;
     }
 
     private void FixedUpdate()
     {
         
         
-        rb.linearVelocity = actualVelocity;
+        rb.linearVelocity += actualVelocity;
         //Debug.Log("actualVelocity: " + actualVelocity);
     }
 
     // Update is called once per frame
     void Update()
     {
-        actualVelocity = new Vector2(movementInput.x * movementSpeed, rb.linearVelocity.y);
+        actualVelocity = new Vector2(movementInput.x * movementSpeed, 0) * Time.deltaTime;
+        actualVelocity = Vector2.ClampMagnitude(actualVelocity, movementSpeed * 5);
     }
     
     public void onMove(InputAction.CallbackContext context)

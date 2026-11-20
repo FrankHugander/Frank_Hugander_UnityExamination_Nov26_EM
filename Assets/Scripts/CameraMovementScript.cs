@@ -17,9 +17,9 @@ public class CameraMovementScript : MonoBehaviour
     void Update()
     {
         subjectPosition = cameraSubject.transform.position;
-        movementSpeed = new Vector2(subjectPosition.x - lastPosition.x, subjectPosition.y - lastPosition.y).magnitude * Time.deltaTime * 100;
+        movementSpeed = new Vector2(subjectPosition.x - lastPosition.x, subjectPosition.y - lastPosition.y).magnitude * Time.deltaTime * 10000;
         
-        transform.position = new Vector3(subjectPosition.x, subjectPosition.y, -10 -movementSpeed);
+        transform.position = new Vector3(subjectPosition.x, subjectPosition.y, -20 -movementSpeed);
         
         lastPosition = subjectPosition;
     }
