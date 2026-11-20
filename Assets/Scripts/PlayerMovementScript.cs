@@ -27,7 +27,8 @@ public class PlayerMovementScript : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+        actualVelocity = new Vector2(movementInput.x * movementSpeed, 0) * Time.deltaTime;
+        actualVelocity = Vector2.ClampMagnitude(actualVelocity, movementSpeed * 5);
         
         rb.linearVelocity += actualVelocity;
         //Debug.Log("actualVelocity: " + actualVelocity);
@@ -36,8 +37,7 @@ public class PlayerMovementScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        actualVelocity = new Vector2(movementInput.x * movementSpeed, 0) * Time.deltaTime;
-        actualVelocity = Vector2.ClampMagnitude(actualVelocity, movementSpeed * 5);
+        
     }
     
     public void onMove(InputAction.CallbackContext context)
