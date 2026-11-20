@@ -22,7 +22,7 @@ public class PlayerMovementScript : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         movementInput = Vector2.zero;
-        movementSpeed = 130.0f;
+        movementSpeed = 25.0f;
     }
 
     private void FixedUpdate()
