@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 387447778}
   - component: {fileID: 387447781}
   - component: {fileID: 387447780}
+  - component: {fileID: 387447782}
   - component: {fileID: 387447779}
   m_Layer: 0
   m_Name: Ball
@@ -307,6 +308,18 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &387447782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 387447777}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89aa9de0eef6d0447877c2723cc6ba2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerMovementScript
 --- !u!1 &1245768718
 GameObject:
   m_ObjectHideFlags: 0
